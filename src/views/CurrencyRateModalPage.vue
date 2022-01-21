@@ -1,9 +1,9 @@
 <template>
   <div v-if="show" class="modal-overlay" @click.self="closeModal">
     <div class="modal">
-      <h2 class="modal-title">{{currency}}</h2>
+      <h2 class="modal-title">{{ currency }}</h2>
       <div class="modal-content">
-        <h3>{{ currencyRate }}</h3>
+        <h3>{{ currencyRate || 'LOADING...' }}</h3>
       </div>
       <div class="modal-footer">
         <button class="modal-footer__button" @click="closeModal">
@@ -15,34 +15,37 @@
 </template>
 
 <script>
-import {onActivated, ref} from "vue";
-import CurrencyService from "../api/CurrencyService";
+import { onMounted, ref } from 'vue'
+import CurrencyService from '../api/CurrencyService'
 
 export default {
-  name: "CurrenyRateModalPage",
+  name: 'CurrencyRateModalPage',
   props: {
     show: {
       type: Boolean,
-      default: false,
+      default: false
     },
-    currency: String,
+    currency: {
+      type: String,
+    }
   },
-  setup({currency}, { emit }) {
-    let currencyRate = ref([])
-    const closeModal = () => emit('close');
+  setup (props, { emit }) {
+    const currencyRate = ref(null)
+    const closeModal = () => emit('close')
     const getCurrencyRate = async (currency) =>
-        await CurrencyService.getCurrencyRate(currency)
-          .then((data) => console.log(data.data))//currencyRate.value = data.data)
-          .catch((error) => console.error(error.message))
-    //console.log(currencyRate.value)
-    onActivated(()=>{
-      getCurrencyRate(currency.value)
-    });
+      await CurrencyService.getCurrencyRate(currency)
+        .then((res) => { currencyRate.value = res.data[currency] })
+        .catch((error) => console.error(error.message))
+
+    onMounted(() => {
+      getCurrencyRate(props.currency)
+    })
+
     return {
       closeModal,
       currencyRate
-    };
-  },
+    }
+  }
 }
 
 </script>
@@ -104,19 +107,8 @@ export default {
   font-weight: 600;
   background: linear-gradient(90deg, #2F343F 0%, #262a33 100%);
 }
-
-.modal-link {
-  width: 100%;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  background: #2C313D;
-  color: #ECEFF4;
-  font-weight: 300;
-  text-decoration: none;
-  box-sizing: border-box;
+h3 {
+  color: white;
+  text-align: center;
 }
 </style>

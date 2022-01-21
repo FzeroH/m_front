@@ -1,25 +1,24 @@
 <template>
   <button @click="showModal">{{currency}}</button>
-  <teleport to="body">
-    <curreny-rate-modal-page :currency="currency" :show="show" @close="showModal"/>
+  <teleport v-if="show" to="body">
+    <currency-rate-modal-page :currency="currency" :show="show" @close="showModal"/>
   </teleport>
 </template>
 
 <script>
 
-import CurrenyRateModalPage from "../views/CurrenyRateModalPage";
-import {ref} from "vue";
-export default  {
-  name: "CurrencyItem",
-  components: {CurrenyRateModalPage},
-  props:
-      {
-        currency: String,
-      },
-  setup(){
+import CurrencyRateModalPage from '../views/CurrencyRateModalPage'
+import { ref } from 'vue'
+export default {
+  name: 'CurrencyItem',
+  components: { CurrencyRateModalPage },
+  props: {
+    currency: String
+  },
+  setup () {
     const show = ref(false)
-    const showModal = () => show.value = !show.value;
-    return{ showModal, show }
+    const showModal = () => { show.value = !show.value }
+    return { showModal, show }
   }
 }
 </script>

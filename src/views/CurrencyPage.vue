@@ -1,27 +1,27 @@
 <template>
   <div class="currency_page-container" >
-    <CurrencyItem v-for="currency in currencyList" :key="currency" :currency="currency"/>
+    <CurrencyItem v-for="(currency, index) in currencyList" :key="index" :currency="currency"/>
   </div>
 </template>
 
 <script>
-import CurrencyItem from "../components/CurrencyItem";
-import CurrencyService from "../api/CurrencyService";
-import {onMounted, ref} from "vue";
+import CurrencyItem from '../components/CurrencyItem'
+import CurrencyService from '../api/CurrencyService'
+import { onMounted, ref } from 'vue'
 export default {
-  name: "CurrencyPage",
-  components: {CurrencyItem},
-  setup(){
-    let currencyList = ref([]);
+  name: 'CurrencyPage',
+  components: { CurrencyItem },
+  setup () {
+    const currencyList = ref([])
     const getCurrencyList = async () => {
       await CurrencyService.getCurrencyList()
-          .then((data) => currencyList.value = data.data)
-          .catch((error) => console.error(error.message));
+        .then((res) => { currencyList.value = res.data })
+        .catch((error) => console.error(error.message))
       console.log(currencyList)
-    };
+    }
     onMounted(() => {
       getCurrencyList()
-    });
+    })
     return {
       currencyList
     }
