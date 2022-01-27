@@ -1,55 +1,60 @@
 <template>
   <div class="currency_item-container">
     <span>
-      <h3>{{data.city}}</h3>
-      <h3>{{data.temp}}°</h3>
+      <h3>{{ name }}</h3>
+      <h3>{{ temp }}°</h3>
     </span>
-    <img src="" alt=""/>
+    <img :src="`http://openweathermap.org/img/wn/${ image }@2x.png`" alt=""/>
   </div>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue'
-import WeatherService from "../api/WeatherService";
-
-export default defineComponent({
+export default {
   name: 'WeatherItem',
-
-  setup() {
-    const data = ref({city: 'Lipetsk', temp: '10'})
-    const getWeather = async () => {
-      await WeatherService.getWeather()
-          .then((data) => data.value = data.fact)
-          .catch((error) => console.error(error.message));
-    };
-    return {
-      data,
-      getWeather
-    };
+  props: {
+    name: {
+      type: String,
+    },
+    temp: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
   },
-});
+}
 </script>
 
 <style scoped>
 .currency_item-container {
   display: flex;
   flex-direction: row;
-  width: 50%;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 40%;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  margin-left: 25%;
-  margin-top: 10em;
+  margin: 5em auto 0 auto;
 }
+
+.currency_item-container > span {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 .currency_item-container > span > h3 {
   color: white;
   font-size: 48px;
+  margin: 30px 0 auto 10px;
   box-sizing: content-box;
-  margin-left: 50%;
+  font-weight: normal;
+  text-align: center;
 }
+
 .currency_item-container > img {
   width: 100px;
   height: 100px;
-  background: white;
-  margin: 75px 50%;
 }
 </style>
