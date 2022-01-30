@@ -52,4 +52,64 @@ h3 {
   font-size: 48px;
   font-weight: 200;
 }
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  input {
+    font-size: 18px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 48px;
+    font-weight: 200;
+  }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  input {
+    font-size: 16px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 34px;
+    font-weight: 200;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  input {
+    font-size: 14px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 24px;
+    font-weight: 200;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  input {
+    font-size: 12px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 200;
+  }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  input {
+    font-size: 10px;
+    font-weight: 200;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
 </style>

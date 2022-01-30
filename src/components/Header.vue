@@ -30,12 +30,12 @@ export default {
 </script>
 
 <style scoped>
-.header-wrapper{
+.header-wrapper {
   width: 100%;
   position: relative;
   background: #171A21;
 }
-.header-container{
+.header-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -48,17 +48,17 @@ export default {
   text-decoration: none;
 }
 
-.header-logo > h2{
+.header-logo > h2 {
   color: white;
   margin: 0;
   padding-top: 20px;
   padding-left: 20px;
 }
-.header-logo > h2:not(:first-child){
+.header-logo > h2:not(:first-child) {
   color: greenyellow;
   padding-left: 0;
 }
-.header-container-links{
+.header-container-links {
   display: flex;
   flex-direction: row;
 }
@@ -76,6 +76,44 @@ export default {
   border: transparent;
   background: transparent;
   color: white;
-  font-size: 16px;
+}
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .header-logo > h2 {
+    font-size: 24px;
+  }
+  .header-container-links > a > button {
+    font-size: 16px;
+  }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .header-logo > h2 {
+    font-size: 24px;
+  }
+  .header-container-links > a > button {
+    font-size: 16px;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-logo > h2 {
+    font-size: 20px;
+  }
+  .header-container-links > a > button {
+    font-size: 14px;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .header-logo > h2 {
+    font-size: 18px;
+  }
+  .header-container-links > a > button {
+    font-size: 10px;
+  }
 }
 </style>

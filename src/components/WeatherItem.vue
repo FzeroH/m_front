@@ -57,4 +57,68 @@ export default {
   width: 100px;
   height: 100px;
 }
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+  .currency_item-container > span > h3 {
+    font-size: 48px;
+  }
+
+  .currency_item-container > img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .currency_item-container > span > h3 {
+    font-size: 48px;
+    margin: 30px 0 auto 10px;
+  }
+
+  .currency_item-container > img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .currency_item-container > span > h3 {
+    font-size: 24px;
+    margin: 30px 0 auto 10px;
+  }
+
+  .currency_item-container > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .currency_item-container > span > h3 {
+    font-size: 16px;
+    margin: 10px 0 auto 10px;
+  }
+
+  .currency_item-container > img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Landscape phones and smaller */
+@media (max-width: 480px) {
+  .currency_item-container > span > h3 {
+    font-size: 12px;
+    margin: 10px 0 auto 10px;
+  }
+
+  .currency_item-container > img {
+    width: 30px;
+    height: 30px;
+  }
+}
 </style>
