@@ -13,15 +13,15 @@ export default {
   name: 'WeatherItem',
   props: {
     name: {
-      type: String,
+      type: String
     },
     temp: {
-      type: String,
+      type: String
     },
     image: {
-      type: String,
-    },
-  },
+      type: String
+    }
+  }
 }
 </script>
 
@@ -29,9 +29,9 @@ export default {
 .currency_item-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 40%;
+  width: fit-content;
   height: 40%;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -46,7 +46,6 @@ export default {
 
 .currency_item-container > span > h3 {
   color: white;
-  font-size: 48px;
   margin: 30px 0 auto 10px;
   box-sizing: content-box;
   font-weight: normal;

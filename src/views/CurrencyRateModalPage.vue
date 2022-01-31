@@ -26,7 +26,7 @@ export default {
       default: false
     },
     currency: {
-      type: String,
+      type: String
     }
   },
   setup (props, { emit }) {

@@ -1,4 +1,4 @@
-import Instance from "../config/axios.config";
+import Instance from "../config/axios.config"
 
 
 class WeatherService {

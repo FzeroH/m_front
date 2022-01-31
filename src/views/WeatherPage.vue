@@ -7,29 +7,29 @@
 <script>
 import WeatherItem from '../components/WeatherItem'
 import { ref } from 'vue'
-import WeatherService from "../api/WeatherService";
+import WeatherService from '../api/WeatherService'
 
 export default {
   name: 'WeatherPage',
   components: { WeatherItem },
 
-  setup(){
+  setup () {
     const name = ref('')
     const temp = ref()
     const image = ref('')
-    let cityName = ref('')
+    const cityName = ref('')
 
     const getWeather = async (city) => {
       await WeatherService.getWeather(city)
-          .then((res) => {
-            temp.value = parseInt(`${res.main.temp - 273.15}`)
-            name.value = res.name
-            image.value = res.weather[0].icon
-          })
-          .catch((err) => console.error(err.message))
+        .then((res) => {
+          temp.value = parseInt(`${res.main.temp - 273.15}`)
+          name.value = res.name
+          image.value = res.weather[0].icon
+        })
+        .catch((err) => console.error(err.message))
     }
     return { getWeather, name, temp, image, cityName }
-  },
+  }
 }
 </script>
 
