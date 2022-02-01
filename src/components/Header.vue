@@ -35,6 +35,7 @@ export default {
   position: relative;
   background: #171A21;
 }
+
 .header-container {
   display: flex;
   flex-direction: row;
@@ -42,6 +43,7 @@ export default {
   border-bottom: #2C313D solid 1px;
   margin: 0 10px 0 10px;
 }
+
 .header-logo {
   display: flex;
   flex-direction: row;
@@ -54,14 +56,17 @@ export default {
   padding-top: 20px;
   padding-left: 20px;
 }
+
 .header-logo > h2:not(:first-child) {
   color: greenyellow;
   padding-left: 0;
 }
+
 .header-container-links {
   display: flex;
   flex-direction: row;
 }
+
 .header-container-links > a {
   display: flex;
   flex-direction: row;
@@ -71,17 +76,20 @@ export default {
   color: white;
   list-style: none;
 }
+
 .header-container-links > a > button {
   margin: 20px 20px 20px 0;
   border: transparent;
   background: transparent;
   color: white;
 }
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
   .header-logo > h2 {
     font-size: 24px;
   }
+
   .header-container-links > a > button {
     font-size: 16px;
   }
@@ -92,6 +100,7 @@ export default {
   .header-logo > h2 {
     font-size: 24px;
   }
+
   .header-container-links > a > button {
     font-size: 16px;
   }
@@ -102,6 +111,7 @@ export default {
   .header-logo > h2 {
     font-size: 20px;
   }
+
   .header-container-links > a > button {
     font-size: 14px;
   }
@@ -112,6 +122,7 @@ export default {
   .header-logo > h2 {
     font-size: 18px;
   }
+
   .header-container-links > a > button {
     font-size: 10px;
   }

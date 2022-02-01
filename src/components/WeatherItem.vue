@@ -56,6 +56,7 @@ export default {
   width: 100px;
   height: 100px;
 }
+
 /* Large desktops and laptops */
 @media (min-width: 1200px) {
   .currency_item-container > span > h3 {

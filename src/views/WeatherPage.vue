@@ -45,6 +45,7 @@ input {
   font-size: 18px;
   font-weight: 200;
 }
+
 h3 {
   text-align: center;
   margin-top: 10%;
@@ -59,6 +60,7 @@ h3 {
     font-size: 18px;
     font-weight: 200;
   }
+
   h3 {
     font-size: 48px;
     font-weight: 200;
@@ -71,6 +73,7 @@ h3 {
     font-size: 16px;
     font-weight: 200;
   }
+
   h3 {
     font-size: 34px;
     font-weight: 200;
@@ -83,6 +86,7 @@ h3 {
     font-size: 14px;
     font-weight: 200;
   }
+
   h3 {
     font-size: 24px;
     font-weight: 200;
@@ -95,6 +99,7 @@ h3 {
     font-size: 12px;
     font-weight: 200;
   }
+
   h3 {
     font-size: 20px;
     font-weight: 200;
@@ -107,6 +112,7 @@ h3 {
     font-size: 10px;
     font-weight: 200;
   }
+
   h3 {
     font-size: 18px;
     font-weight: 200;

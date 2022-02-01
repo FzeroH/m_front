@@ -107,6 +107,7 @@ export default {
   font-weight: 600;
   background: linear-gradient(90deg, #2F343F 0%, #262a33 100%);
 }
+
 h3 {
   color: white;
   text-align: center;

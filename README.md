@@ -1,4 +1,4 @@
-# weather
+# Site
 
 ## Project setup
 ```

@@ -6,7 +6,7 @@ class AuthService {
       email: email,
       password: password
     })
-      .then(res => resolve.data(res.data))
+      .then(res => resolve(res.data))
       .catch(e => reject(e))
   })
 
