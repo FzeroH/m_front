@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import AuthService from '../api/AuthService'
+import createPersistedState from 'vuex-persistedstate'
 
 export default createStore({
   state: {
@@ -43,5 +44,6 @@ export default createStore({
     }
   },
   modules: {
-  }
+  },
+  plugins: [createPersistedState()]
 })

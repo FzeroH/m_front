@@ -1,35 +1,32 @@
 <template>
-  <h1>Регистрация</h1>
-  <form @submit.prevent="signup(email, password, userName)">
-    <label>Имя пользователя</label>
-    <input type="text" v-model="userName"/>
-    <label>Email</label>
-    <input type="text" v-model="email"/>
-    <label>Пароль</label>
-    <input type="password" v-model="password"/>
-    <button type="submit">Зарегистрироваться</button>
+  <h1>Авторизация</h1>
+  <form @submit.prevent="signin(email, password)">
+    <label> Email</label>
+    <input type="text" v-model="email">
+    <label>Password</label>
+    <input type="password" v-model="password">
+    <button type="submit">Войти</button>
   </form>
+  <router-link to="/registration">Зарегистрироваться</router-link>
 </template>
 
 <script>
 import { ref, defineComponent } from 'vue'
-import AuthService from '../api/AuthService'
+import { useStore } from 'vuex'
 
-export default defineComponent( {
-  name: 'RegistrationPage',
+export default defineComponent({
+  name: 'AuthPage',
   setup () {
-    const userName = ref('')
+    const store = useStore()
     const email = ref('')
     const password = ref('')
-
-    const signup = async (email, password, userName) => {
-      await AuthService.signUp(email, password, userName)
-        .then((res) => { console.log(res.data) })
-        .catch((e) => console.error(e.message))
+    const signin = async (email, password) => {
+      await store.dispatch('login', { email, password })
     }
-
     return {
-      userName, email, password, signup
+      signin,
+      email,
+      password
     }
   }
 })
@@ -77,5 +74,16 @@ form > button {
   color: black;
   font-weight: 600;
   margin: 10px auto 0 auto;
+
+}
+
+a {
+  display:flex;
+  justify-content: center;
+  font-size: 16px;
+  margin:15px auto 0 auto;
+  text-decoration: none;
+  color: white;
+
 }
 </style>

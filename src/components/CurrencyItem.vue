@@ -8,8 +8,9 @@
 <script>
 
 import CurrencyRateModalPage from '../views/CurrencyRateModalPage'
-import { ref } from 'vue'
-export default {
+import { ref, defineComponent } from 'vue'
+
+export default defineComponent( {
   name: 'CurrencyItem',
   components: { CurrencyRateModalPage },
   props: {
@@ -20,7 +21,7 @@ export default {
     const showModal = () => { show.value = !show.value }
     return { showModal, show }
   }
-}
+})
 </script>
 
 <style scoped>

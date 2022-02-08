@@ -9,7 +9,9 @@
 </template>
 
 <script>
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent ({
   name: 'WeatherItem',
   props: {
     name: {
@@ -22,7 +24,7 @@ export default {
       type: String
     }
   }
-}
+})
 </script>
 
 <style scoped>

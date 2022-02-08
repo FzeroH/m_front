@@ -7,8 +7,8 @@
 <script>
 import CurrencyItem from '../components/CurrencyItem'
 import CurrencyService from '../api/CurrencyService'
-import { onMounted, ref } from 'vue'
-export default {
+import { onMounted, ref, defineComponent } from 'vue'
+export default defineComponent( {
   name: 'CurrencyPage',
   components: { CurrencyItem },
   setup () {
@@ -26,7 +26,7 @@ export default {
       currencyList
     }
   }
-}
+})
 </script>
 
 <style scoped>

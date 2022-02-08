@@ -6,10 +6,10 @@
 
 <script>
 import WeatherItem from '../components/WeatherItem'
-import { ref } from 'vue'
+import { ref, defineComponent } from 'vue'
 import WeatherService from '../api/WeatherService'
 
-export default {
+export default defineComponent( {
   name: 'WeatherPage',
   components: { WeatherItem },
 
@@ -30,7 +30,7 @@ export default {
     }
     return { getWeather, name, temp, image, cityName }
   }
-}
+})
 </script>
 
 <style scoped>

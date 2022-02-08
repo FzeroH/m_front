@@ -15,10 +15,10 @@
 </template>
 
 <script>
-import { onMounted, ref } from 'vue'
+import { onMounted, ref, defineComponent } from 'vue'
 import CurrencyService from '../api/CurrencyService'
 
-export default {
+export default defineComponent( {
   name: 'CurrencyRateModalPage',
   props: {
     show: {
@@ -46,7 +46,7 @@ export default {
       currencyRate
     }
   }
-}
+})
 
 </script>
 
