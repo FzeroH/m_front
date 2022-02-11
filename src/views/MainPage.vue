@@ -11,8 +11,8 @@ import ProfilePage from './ProfilePage'
 
 export default defineComponent({
   name: 'MainPage',
-  components: {ProfilePage, AuthPage},
-  setup() {
+  components: { ProfilePage, AuthPage },
+  setup () {
     const store = useStore()
     return {
       store

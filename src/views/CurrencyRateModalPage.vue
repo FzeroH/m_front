@@ -18,7 +18,7 @@
 import { onMounted, ref, defineComponent } from 'vue'
 import CurrencyService from '../api/CurrencyService'
 
-export default defineComponent( {
+export default defineComponent({
   name: 'CurrencyRateModalPage',
   props: {
     show: {

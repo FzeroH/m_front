@@ -1,10 +1,10 @@
 <template>
   <h1>Авторизация</h1>
-  <form @submit.prevent="signin(email, password)">
-    <label> Email</label>
-    <input type="text" v-model="email">
-    <label>Password</label>
-    <input type="password" v-model="password">
+  <form @submit.prevent="signIn(state.email, state.password)">
+    <label for="email">Email</label>
+    <input id="email" type="text" v-model="state.email">
+    <label for="password">Password</label>
+    <input id="password" type="password" v-model="state.password">
     <button type="submit">Войти</button>
   </form>
   <router-link to="/registration">Зарегистрироваться</router-link>
@@ -18,15 +18,16 @@ export default defineComponent({
   name: 'AuthPage',
   setup () {
     const store = useStore()
-    const email = ref('')
-    const password = ref('')
-    const signin = async (email, password) => {
+    const state = ref({
+      email: '',
+      password: ''
+    })
+    const signIn = async (email, password) => {
       await store.dispatch('login', { email, password })
     }
     return {
-      signin,
-      email,
-      password
+      signIn,
+      state
     }
   }
 })

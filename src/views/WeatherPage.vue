@@ -9,7 +9,7 @@ import WeatherItem from '../components/WeatherItem'
 import { ref, defineComponent } from 'vue'
 import WeatherService from '../api/WeatherService'
 
-export default defineComponent( {
+export default defineComponent({
   name: 'WeatherPage',
   components: { WeatherItem },
 
@@ -81,7 +81,7 @@ h3 {
 }
 
 /* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 993px) {
   input {
     font-size: 14px;
     font-weight: 200;

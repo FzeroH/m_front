@@ -10,7 +10,7 @@
 import CurrencyRateModalPage from '../views/CurrencyRateModalPage'
 import { ref, defineComponent } from 'vue'
 
-export default defineComponent( {
+export default defineComponent({
   name: 'CurrencyItem',
   components: { CurrencyRateModalPage },
   props: {

@@ -1,7 +1,7 @@
 <template>
   <div class="profile-container">
-    <h3>{{userName}}</h3>
-    <label>История поиска погоды</label>
+    <h3>{{ userName }}</h3>
+    <p>История поиска погоды</p>
     <div class="history-weather">
       <h4>Название города</h4>
     </div>
@@ -12,9 +12,9 @@
 import { onMounted, defineComponent, ref } from 'vue'
 import AuthService from '../api/AuthService'
 
-export default defineComponent ({
-  name: "ProfilePage",
-  props:{
+export default defineComponent({
+  name: 'ProfilePage',
+  props: {
     userID: {
       type: String
     },
@@ -23,13 +23,13 @@ export default defineComponent ({
     }
   },
 
-  setup(props) {
-    let userName = ref('')
+  setup (props) {
+    const userName = ref('')
     const weatherHistory = ref([])
-    onMounted(() =>{
+    onMounted(() => {
       AuthService.getUserData(props.userID, props.token)
-          .then((res) => userName.value = res.username)
-          .catch((e) => console.error(e.message))
+        .then((res) => { userName.value = res.username })
+        .catch((e) => console.error(e.message))
     })
     return {
       userName,
@@ -47,13 +47,17 @@ export default defineComponent ({
   margin: 100px auto 0 auto;
 }
 
-.profile-container > h3, label {
+.profile-container > h3, p {
   color: white;
 }
 
 .profile-container > h3 {
   font-size: 24px;
   margin: 10px 0;
+}
+
+.profile-container > p {
+  margin: 5px 0;
 }
 
 .history-weather {

@@ -26,7 +26,7 @@
 <script>
 import { defineComponent } from 'vue'
 
-export default defineComponent( {
+export default defineComponent({
   name: 'Header'
 })
 </script>
@@ -109,7 +109,7 @@ export default defineComponent( {
 }
 
 /* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 993px) {
   .header-logo > h2 {
     font-size: 20px;
   }

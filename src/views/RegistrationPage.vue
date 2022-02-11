@@ -15,7 +15,7 @@
 import { ref, defineComponent } from 'vue'
 import AuthService from '../api/AuthService'
 
-export default defineComponent( {
+export default defineComponent({
   name: 'RegistrationPage',
   setup () {
     const userName = ref('')

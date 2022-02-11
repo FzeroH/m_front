@@ -8,7 +8,7 @@
 import CurrencyItem from '../components/CurrencyItem'
 import CurrencyService from '../api/CurrencyService'
 import { onMounted, ref, defineComponent } from 'vue'
-export default defineComponent( {
+export default defineComponent({
   name: 'CurrencyPage',
   components: { CurrencyItem },
   setup () {

@@ -11,7 +11,7 @@
 <script>
 import { defineComponent } from 'vue'
 
-export default defineComponent ({
+export default defineComponent({
   name: 'WeatherItem',
   props: {
     name: {
@@ -86,7 +86,7 @@ export default defineComponent ({
 }
 
 /* Portrait tablets and small desktops */
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 993px) {
   .currency_item-container > span > h3 {
     font-size: 24px;
     margin: 30px 0 auto 10px;
